@@ -1,0 +1,73 @@
+{
+  "name": "hashlips-art-engine-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "canvas": "^2.9.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
+    "react-scripts": "5.0.0",
+    "react-sort-list": "^0.0.13",
+    "web-vitals": "^2.1.4"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "author": "HashLips",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js",
+    "electron-pack-mac": "electron-builder --mac --x64 -c.extraMetadata.main=build/electron.js",
+    "electron-pack-win": "electron-builder --win --x64 -c.extraMetadata.main=build/electron.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "concurrently": "^7.1.0",
+    "electron": "^18.0.3",
+    "electron-builder": "^23.0.3",
+    "wait-on": "^6.0.1"
+  },
+  "build": {
+    "appId": "com.hashlips.ea",
+    "icon": "build/icon.ico",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}

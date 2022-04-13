@@ -1,0 +1,101 @@
+.main {
+  grid-area: main;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+}
+
+.main_info {
+  margin: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 1px solid var(--white);
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
+
+.main_cards {
+  margin: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px 200px;
+  grid-template-areas:
+    "card1"
+    "card2";
+  grid-gap: 15px;
+  margin-bottom: 0;
+}
+
+.log_info {
+  margin: 15px;
+  padding: 15px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 12px;
+  background-color: black;
+}
+
+.log_info_title {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.log_info_text {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.card {
+  padding: 15px;
+  border: 1px solid var(--white);
+}
+
+.card:first-child {
+  grid-area: card1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card:nth-child(2) {
+  grid-area: card2;
+  overflow-y: auto;
+}
+
+.card_tree_title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card_tree_item {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.card_tree_sub_item_title {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* responsive layout */
+@media only screen and (min-width: 750px) {
+  .main_cards {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100px 300px;
+    grid-template-areas:
+      "card1 card2"
+      "card1 card2";
+    grid-gap: 15px;
+    margin-bottom: 0;
+  }
+}

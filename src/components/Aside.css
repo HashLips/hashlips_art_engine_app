@@ -1,0 +1,98 @@
+.aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 2;
+  transform: translateX(-245px);
+  color: var(--grey);
+  background-color: var(--offWhite);
+}
+
+.aside.active {
+  transform: translateX(0);
+}
+
+.aside_list_title {
+  height: 50px;
+  padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.aside_img_link {
+  margin-right: 10px;
+}
+
+.aside_list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.aside_list_item {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.aside_list_item_input_label {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.aside_list_item_button {
+  margin-top: 5px;
+  width: 210px;
+  font-size: 14px;
+  resize: none;
+  padding: 5px;
+}
+
+.aside_list_item_input {
+  margin-top: 5px;
+  width: 195px;
+  font-size: 14px;
+  resize: none;
+  padding: 5px;
+}
+
+.aside_list_item_filename_container {
+  margin-top: 5px;
+  width: 200px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--grey);
+}
+
+.aside_close-icon {
+  position: absolute;
+  visibility: visible;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: var(--white);
+}
+
+/* responsive layout */
+@media only screen and (min-width: 750px) {
+  .aside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: translateX(0);
+  }
+
+  .aside_close-icon {
+    display: none;
+  }
+}
